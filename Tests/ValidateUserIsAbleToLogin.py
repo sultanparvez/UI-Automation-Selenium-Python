@@ -1,6 +1,6 @@
 import time
 import unittest
-# import HtmlTestRunner
+import HtmlTestRunner
 
 from selenium import webdriver
 
@@ -35,5 +35,5 @@ class LoginTest(unittest.TestCase):
         cls.driver.quit()
         print("Test Completed")
 
-# if __name__ == '__main__':
-#     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=Reports))
+ if __name__ == '__main__':
+     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=Reports))
