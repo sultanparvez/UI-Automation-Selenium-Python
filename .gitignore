@@ -1,1 +1,4 @@
 /.idea
+Locators/__pycache__
+Pages/__pycache__
+Tests/__pycache__
