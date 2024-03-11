@@ -1,18 +1,14 @@
 import sys
 import os
-
 sys.path.append(os.path.join(os.path.dirname(__file__), "...", "..."))
+
 import unittest
 import HtmlTestRunner
 
 from selenium import webdriver
-
 from Pages.HomePage import HomePage
 from Pages.LoginPage import LoginPage
-
-username = "standard_user"
-password = "secret_sauce"
-
+from Config.Config import TestData
 
 class LoginTest(unittest.TestCase):
 
@@ -21,14 +17,14 @@ class LoginTest(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
-        cls.driver.get("https://www.saucedemo.com/")
+        cls.driver.get(TestData.BASE_URL)
 
     def test_login_validation(self):
         driver = self.driver
         login = LoginPage(driver)
         homepage = HomePage(driver)
-        login.enter_username(username)
-        login.enter_password(password)
+        login.enter_username(TestData.username)
+        login.enter_password(TestData.password)
         login.click_login()
         homepage.assert_login_successful()
 
