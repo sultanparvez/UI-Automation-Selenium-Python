@@ -41,9 +41,3 @@ class LoginTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='Reports'))
-    # # Get the directory of the current script
-    # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # # Define the directory for the reports relative to the script directory
-    # reports_dir = os.path.join(script_dir, 'Reports')
-    # # Run unittest with HtmlTestRunner, specifying the output directory
-    # unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=reports_dir))
